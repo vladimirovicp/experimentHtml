@@ -125,5 +125,55 @@
   }
 }
 
+.details3{
+  background-color: #3D455F;
+  color: #fff;
+  padding: 20px;
+
+  details{
+    margin-bottom: 20px;
+
+    display: block;
+
+
+  }
+  summary{
+    margin-bottom: 10px;
+
+    position: relative;
+    display:block;
+    cursor: pointer;
+
+
+    &:before {
+      top: .4em;
+      right: .3em;
+      color: transparent;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNTkgOC41OUwxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") no-repeat 50% 50% / 1em 1em;
+      width: 1em;
+      height: 1em;
+      content: "";
+      position: absolute;
+      transition: transform .5s;
+    }
+
+
+  }
+
+  summary::-webkit-details-marker{display:none;}
+  summary::-moz-list-bullet{list-style-type:none;}
+  summary::marker{display:none;}
+
+
+
+  .burger-menu{
+    &__sub{
+      &-list{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
 
 

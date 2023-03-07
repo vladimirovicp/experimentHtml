@@ -114,25 +114,18 @@ class Details1 {
 
 let details1 = document.querySelectorAll('.details1');
 
-// if( details1.length > 0){
-//     for(let index = 0; index < details1.length; index++){
-//         details1[index].querySelectorAll('details').forEach((el) => {
-//             new Details1(el);
-//          });
-//     }
-// }
+if( details1.length > 0){
+    for(let index = 0; index < details1.length; index++){
+        details1[index].querySelectorAll('details').forEach((el) => {
+            new Details1(el);
+         });
+    }
+}
 
 
 let details2 = document.querySelector('.details2');
 
 if( details2){
-
-    // for(let index = 0; index < details2.length; index++){
-    //     details2[index].querySelectorAll('details').forEach((el) => {
-    //         new Details1(el);
-    //     });
-    // }
-
     const details = details2.querySelectorAll(".item > details");
     const detailsSub = details2.querySelectorAll(".item_sub > details");
 
@@ -164,3 +157,7 @@ if( details2){
         }
     }
 }
+
+
+
+let details3 = document.querySelector('.details3');

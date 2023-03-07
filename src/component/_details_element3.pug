@@ -1,0 +1,78 @@
+-
+    let burgerMenu1 = [
+        {
+            title: 'Университет',
+            subList: [
+                {
+                    title: 'Визитка СГУ',
+                    subSubList: [
+                        {
+                            title: 'История СГУ',
+                            link: 'sgu.ru'
+                        },
+                        {
+                            title: 'Университет сегодня:',
+                            section: [
+                                {
+                                    title: 'Сведения об образовательной организации',
+                                    link: 'sgu.ru'
+                                },
+                                {
+                                    title: 'Лицензия и аккредитация',
+                                    link: '#'
+                                },
+                                {
+                                    title: 'Сертификаты и свидетельства СГУ',
+                                    link: '#'
+                                },
+                                {
+                                    title: 'Миссия и ценности',
+                                    link: '#'
+                                },
+                                {
+                                    title: 'СГУ в рейтингах',
+                                    link: '#'
+                                },
+                                {
+                                    title: 'Приоритет 2030',
+                                    link: '#'
+                                },
+                            ]
+                        }
+
+
+                    ]
+                },
+            ]
+
+        },
+    ]
+
+
+nav.burger-menu__navigation.details3
+    .burger-menu__menu
+        .burger-menu__wrapper
+                each items in burgerMenu1
+                    details
+                        summary !{items.title}
+                            .plus-close
+                                span
+                        .burger-menu__sub-list
+                            each sub in items.subList
+                                details
+                                    summary !{sub.title}
+                                        .plus-close
+                                            span
+                                    each subsub in sub.subSubList
+                                        if subsub.section
+                                            .burger-menu__sub-sub-item
+                                                span.burger-menu__sub-sub-title !{subsub.title}
+                                                ul.burger-menu__sub-sub-section
+                                                    each section in subsub.section
+                                                        li.burger-menu__sub-sub-section-item
+                                                            a(class='burger-menu__sub-sub-section-link' href=section.link) !{section.title}
+                                        else
+                                            .burger-menu__sub-sub-item
+                                                a(class='burger-menu__sub-sub-link' href=subsub.link) !{subsub.title}
+
+

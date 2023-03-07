@@ -47,8 +47,9 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: path.join('fonts', '[name][ext]'),
+                    //filename: path.join('fonts', '[name][ext]'),
                     //filename: 'fonts/[name][ext]' // все шрифты в dist/font
+                    filename: '[path][name][ext]',
                 }
             },
         ],
