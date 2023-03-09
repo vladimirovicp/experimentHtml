@@ -3,7 +3,9 @@
   height: 1.3rem;
   position: absolute;
   left: -2.5rem;
-  top: .7rem;
+  //top: .7rem;
+  top: calc(50% + 0.65rem);
+  transform: translateY(-50%);
 
   span{
     position: relative;

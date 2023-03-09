@@ -110,10 +110,160 @@ class Details1 {
         this.el.style.height = this.el.style.overflow = '';
     }
 }
+class Details3 {
+    constructor(el) {
+        // Сохраним элемент <details>
+        this.el = el;
+        // Сохраним элемент <summary>
+        this.summary = el.querySelector('summary');
+        // Сохраним элемент <div class="content">
+        this.content = el.querySelector('.content');
 
+        // Сохраним объект анимации (чтобы мы могли отменить его при необходимости)
+        this.animation = null;
+        // Сохраним, если элемент закрывается
+        this.isClosing = false;
+        // Store if the element is expanding
+        this.isExpanding = false;
+        // Слушаем клики пользователя по элементу summary
+        this.summary.addEventListener('click', (e) => this.onClick(e));
+    }
+
+    onClick(e) {
+        // Остановим поведение браузера по умолчанию
+        e.preventDefault();
+        // Добавим overflow в <details>, чтобы избежать переполнения содержимого
+        this.el.style.overflow = 'hidden';
+        // Проверьте, закрывается ли элемент или он уже закрыт
+        if (this.isClosing || !this.el.open) {
+
+            // const details = details3[0].querySelectorAll(".burger-menu__item");
+            // for(let i=0;i<details.length;i++) {
+            //     if (details[i].tagName == "DETAILS" && details[i].hasAttribute('open') && event.target != details[i]){
+            //         //console.log(details[i])
+            //         //setInterval(() => new Details3(details[i]).shrink(), 2000)
+            //
+            //
+            //
+            //         new Details3(details[i]).shrink()
+            //
+            //     }
+            // }
+
+            //setTimeout(this.open(), 1000);
+
+            //setInterval(() => this.open(), 2000)
+
+            this.open();
+
+            // Проверьте, открывается ли элемент или он уже открыт
+        } else if (this.isExpanding || this.el.open) {
+            this.shrink();
+        }
+    }
+
+    shrink() {
+        // Set the element as "being closed"
+        this.isClosing = true;
+
+        // Store the current height of the element
+        const startHeight = `${this.el.offsetHeight}px`;
+        // Calculate the height of the summary
+        const endHeight = `${this.summary.offsetHeight}px`;
+
+        // If there is already an animation running
+        if (this.animation) {
+            // Cancel the current animation
+            this.animation.cancel();
+        }
+
+        // Start a WAAPI animation
+        this.animation = this.el.animate({
+            // Set the keyframes from the startHeight to endHeight
+            height: [startHeight, endHeight]
+        }, {
+            duration: 400,
+            easing: 'ease-out'
+        });
+
+        // When the animation is complete, call onAnimationFinish()
+        this.animation.onfinish = () => this.onAnimationFinish(false);
+        // If the animation is cancelled, isClosing variable is set to false
+        this.animation.oncancel = () => this.isClosing = false;
+
+
+    }
+
+    open() {
+
+        // const details = details3[0].querySelectorAll(".burger-menu__item");
+        // for(let i=0;i<details.length;i++) {
+        //     if (details[i].tagName == "DETAILS" && details[i].hasAttribute('open') && event.target != details[i]){
+        //         //console.log(details[i])
+        //         //setInterval(() => new Details3(details[i]).shrink(), 2000)
+        //         let timerId = setTimeout(() => new Details3(details[i]).shrink(), 1000);
+        //         //new Details3(details[i]).shrink()
+        //     }
+        // }
+
+        //console.log(this.details)
+        // Apply a fixed height on the element
+        this.el.style.height = `${this.el.offsetHeight}px`;
+        // Force the [open] attribute on the details element
+        this.el.open = true;
+
+        // Wait for the next frame to call the expand function
+        window.requestAnimationFrame(() => this.expand());
+
+
+        //console.log(this.el)
+
+    }
+
+    expand() {
+        // Set the element as "being expanding"
+        this.isExpanding = true;
+        // Get the current fixed height of the element
+        const startHeight = `${this.el.offsetHeight}px`;
+        // Calculate the open height of the element (summary height + content height)
+        const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+
+        // If there is already an animation running
+        if (this.animation) {
+            // Cancel the current animation
+            this.animation.cancel();
+        }
+
+        // Start a WAAPI animation
+        this.animation = this.el.animate({
+            // Set the keyframes from the startHeight to endHeight
+            height: [startHeight, endHeight]
+        }, {
+            duration: 400,
+            easing: 'ease-out'
+        });
+        // When the animation is complete, call onAnimationFinish()
+        this.animation.onfinish = () => this.onAnimationFinish(true);
+        // If the animation is cancelled, isExpanding variable is set to false
+        this.animation.oncancel = () => this.isExpanding = false;
+    }
+
+    onAnimationFinish(open) {
+        //console.log(this.el)
+        // Set the open attribute based on the parameter
+        this.el.open = open;
+        // Clear the stored animation
+        this.animation = null;
+        // Reset isClosing & isExpanding
+        this.isClosing = false;
+        this.isExpanding = false;
+        // Remove the overflow hidden and the fixed height
+        this.el.style.height = this.el.style.overflow = '';
+    }
+
+}
 
 let details1 = document.querySelectorAll('.details1');
-
 if( details1.length > 0){
     for(let index = 0; index < details1.length; index++){
         details1[index].querySelectorAll('details').forEach((el) => {
@@ -124,7 +274,6 @@ if( details1.length > 0){
 
 
 let details2 = document.querySelector('.details2');
-
 if( details2){
     const details = details2.querySelectorAll(".item > details");
     const detailsSub = details2.querySelectorAll(".item_sub > details");
@@ -160,4 +309,26 @@ if( details2){
 
 
 
-let details3 = document.querySelector('.details3');
+let details3 = document.querySelectorAll('.details3');
+if( details3.length > 0){
+
+    // const details = details3[0].querySelectorAll(".burger-menu__item");
+    // const detailsSub = details3[0].querySelectorAll(".burger-menu__sub-item");
+
+
+    for(let index = 0; index < details3.length; index++){
+        let burgerMenuItem = details3[index].querySelectorAll('.burger-menu__item');
+        burgerMenuItem.forEach((el) => {
+            new Details3(el);
+        });
+
+        for(let i = 0; i< burgerMenuItem.length; i++){
+            let burgerMenuSubItem = details3[index].querySelectorAll('.burger-menu__sub-item');
+            burgerMenuSubItem.forEach((el) => {
+                new Details3(el);
+            });
+        }
+    }
+}
+
+
