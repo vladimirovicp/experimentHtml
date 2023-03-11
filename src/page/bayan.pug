@@ -1,0 +1,46 @@
+doctype html
+html(lang= 'ru')
+    head
+        meta(charset='utf-8')
+        title= 'cssBayan'
+    body
+        .page-cssbayan
+            .container
+                .center
+                    .wrapper.accordion
+                        h1 CSS Bayan
+                        section.accordion__item
+                            input(type='checkbox' class="accordion__checkbox" id="accordion__item-1" checked)
+                            label(class="accordion__title" for="accordion__item-1") You can't just copy and paste CSS
+                                .accordion__ico
+                                    img(src=require("../images/svg/plus_icon.svg"))
+                            label(class="accordion__content" for="accordion__item-1")
+                                img(src=require("../img/sloths/1.png"))
+                        section.accordion__item
+                            input(type='checkbox' class="accordion__checkbox" id="accordion__item-2")
+                            label(class="accordion__title" for="accordion__item-2") Keep calm and carry on
+                                .accordion__ico
+                                    img(src=require("../images/svg/plus_icon.svg"))
+                            label(class="accordion__content" for="accordion__item-2")
+                                img(src=require("../img/sloths/2.png"))
+                        section.accordion__item
+                            input(type='checkbox' class="accordion__checkbox" id="accordion__item-3")
+                            label(class="accordion__title" for="accordion__item-3") Work-life balance
+                                .accordion__ico
+                                    img(src=require("../images/svg/plus_icon.svg"))
+                            label(class="accordion__content" for="accordion__item-3")
+                                img(src=require("../img/sloths/3.png"))
+                        section.accordion__item
+                            input(type='checkbox' class="accordion__checkbox" id="accordion__item-4")
+                            label(class="accordion__title" for="accordion__item-4") Dude, where is JS
+                                .accordion__ico
+                                    img(src=require("../images/svg/plus_icon.svg"))
+                            label(class="accordion__content" for="accordion__item-4")
+                                img(src=require("../img/sloths/4.png"))
+                        section.accordion__item
+                            input(type='checkbox' class="accordion__checkbox" id="accordion__item-5")
+                            label(class="accordion__title" for="accordion__item-5") Relax and take it easy
+                                .accordion__ico
+                                    img(src=require("../images/svg/plus_icon.svg"))
+                            label(class="accordion__content" for="accordion__item-5")
+                                img(src=require("../img/sloths/5.png"))
