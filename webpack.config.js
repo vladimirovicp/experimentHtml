@@ -68,6 +68,11 @@ module.exports = {
             template: path.join(__dirname, 'src', 'page/bayan.pug'),
             filename: 'bayan.html',
         }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/lymphacomplex-program2023.pug'),
+            filename: 'lymphacomplex-program2023.html',
+        }),
+
         new FileManagerPlugin({
             events: {
                 onStart: {
