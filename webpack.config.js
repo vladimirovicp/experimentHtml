@@ -73,6 +73,21 @@ module.exports = {
             filename: 'lymphacomplex-program2023.html',
         }),
 
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/accordions.pug'),
+            filename: 'accordions.html',
+        }),
+
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/details.pug'),
+            filename: 'details.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/carousel.pug'),
+            filename: 'carousel.html',
+        }),
+
+
         new FileManagerPlugin({
             events: {
                 onStart: {

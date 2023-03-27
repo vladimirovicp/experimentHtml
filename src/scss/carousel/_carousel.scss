@@ -1,0 +1,90 @@
+.carousel-1{
+
+  .container{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn {
+    cursor: pointer;
+    font-size: 100px;
+    width: 100px;
+
+  }
+
+  #btn-left{
+    text-align: right;
+  }
+
+  .item, .carousel, .card {
+    display: flex;
+  }
+
+  .carousel-wrapper {
+    width: 640px;
+    margin: 0 20px;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+    background: red;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    cursor: pointer;
+  }
+
+  .card.activated {
+    background: #ccc;
+  }
+
+  .item:first-child .card {
+    background: LawnGreen;
+  }
+
+  .item:last-child .card {
+    background: LightSkyBlue;
+  }
+
+  .item {
+    gap: 20px;
+  }
+
+  .carousel {
+    position: relative;
+    left: -660px;
+    gap: 20px;
+  }
+
+  @keyframes move-right {
+    from {left: -660px;}
+    to {left: -1320px;}
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+  }
+
+  @keyframes move-left {
+    from {left: -660px;}
+    to {left: 0;}
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+  }
+
+  //.hidden {
+  //  display: none;
+  //}
+}
