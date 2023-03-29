@@ -30,41 +30,48 @@ if(carousel1){
     }
 
     BTN_RIGHT.addEventListener('click',moveRight);
-
-
     CAROUSEL.addEventListener("animationend", (animationEvent) =>{
 
         // console.log(animationEvent);
         // console.log(animationEvent.animationName);
 
-        //move-left
-        // move-right
+        let changeItem;
 
-        if (animationEvent.animationName !== 'move-left') {
-            CAROUSEL.classList.remove("transition-right");
-        } else {
+        if (animationEvent.animationName === 'move-left') {
+
             CAROUSEL.classList.remove("transition-left");
+            changeItem = ITEMLEFT;
+            carousel1.querySelector('#item-active').innerHTML = changeItem.innerHTML;
 
-            const leftItems = ITEMLEFT.innerHTML;
-            carousel1.querySelector('#item-active').innerHTML = leftItems;
-
-
-            const card1 = createCardTemplate();
-            card1.innerText = Math.floor(Math.random() * 8);
-
-            const card2 = createCardTemplate();
-            card2.innerText = Math.floor(Math.random() * 8);
-
-            const card3 =createCardTemplate();
-            card3.innerText = Math.floor(Math.random() * 8);
-
-            ITEMLEFT.innerHTML = "";
-            ITEMLEFT.appendChild(card1);
-            ITEMLEFT.appendChild(card2);
-            ITEMLEFT.appendChild(card3);
-
-
+        } else {
+            CAROUSEL.classList.remove("transition-right");
+            changeItem =  ITEMRIGHT;
+            CAROUSEL.classList.remove("transition-left");
+            carousel1.querySelector('#item-active').innerHTML = changeItem.innerHTML;
         }
+
+        //const newItems = [];
+        changeItem.innerHTML = "";
+        for (let i = 0; i<3; i++){
+            const card = createCardTemplate();
+            card.innerText = Math.floor(Math.random() * 8);
+            //newItems.push(card);
+            changeItem.appendChild(card);
+        }
+
+        // const card1 = createCardTemplate();
+        // card1.innerText = Math.floor(Math.random() * 8);
+        //
+        // const card2 = createCardTemplate();
+        // card2.innerText = Math.floor(Math.random() * 8);
+        //
+        // const card3 =createCardTemplate();
+        // card3.innerText = Math.floor(Math.random() * 8);
+
+        // changeItem.innerHTML = "";
+        // changeItem.appendChild(card1);
+        // changeItem.appendChild(card2);
+        // changeItem.appendChild(card3);
 
 
         BTN_LEFT.addEventListener('click',moveLeft);
