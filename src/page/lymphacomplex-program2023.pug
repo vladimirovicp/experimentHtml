@@ -148,7 +148,7 @@
                     "time3": "12:25-12:50",
                     "textCenter": "",
                     "name": "Vladimir Dorokhov",
-                    "text": "Laboratory of neurobiology of sleep and wake, Institute of Higher Nervous Activity and Neurophysiology, Russia Academy of Sience, Russia ",
+                    "text": "Laboratory of Neurobiology of sleep and wake, Institute of Higher Nervous Activity and Neurophysiology, Russia Academy of Sience, Russia ",
                     "mail": "vbdorokhov@mail.ru",
                     "title": "“K-complexes as a marker of working memory activation during sleep upon restoration of disturbed activity”"
                 },
@@ -327,7 +327,7 @@
                     "time2": "17:00-20:00",
                     "time3": "11:00-14:00",
                     "name": "",
-                    "text": "Excursion around Saratov and visit to Satarov State University and \"Smart Sleep\" laboratory",
+                    "text": "Excursion around Saratov <br> visit to Satarov State University <br> \"Smart Sleep\" laboratory",
                     "mail": "",
                     "title": ""
                 },
@@ -336,9 +336,9 @@
                     "time2": "20:00-20:30",
                     "time3": "14:00-14:30",
                     "textCenter": "Award for the best poster / Closing Ceremony",
-                    "name": "Oxana Semyachkina-Glushkovskaya",
-                    "text": "Saratov State University, Laboratory “Smart Sleep”",
-                    "mail": "glushkovskaya@mail.ru",
+                    "name": "<center>Oxana Semyachkina-Glushkovskaya",
+                    "text": "</center><br><center>Saratov State University,</center> <br><center>Laboratory “Smart Sleep”</center>",
+                    "mail": "<center>glushkovskaya@mail.ru</center>",
                     "title": ""
                 },
                 {
@@ -346,7 +346,7 @@
                     "time2": "20:30",
                     "time3": "14:30",
                     "name": "",
-                    "text": "Departure to the airport",
+                    "text": "<center>Departure to the airport</center>",
                     "mail": "",
                 },
             ]
@@ -378,12 +378,12 @@ mixin day(monday)
                         .clock-img
                             img(src=require('/src/img/clock/clock3.png'), alt="")
                         .clock-text !{item.time3}
-                td(align="left")
+                td(align="left" style="padding:5px 10px;")
                     if item.textCenter
                         center
                             b !{item.textCenter}
                     if item.name
-                        b !{item.name},
+                        b !{item.name}, &nbsp;
                     | !{item.text}
                     if item.mail
                         br
@@ -393,7 +393,7 @@ mixin day(monday)
                     if item.name2
                         br
                         br
-                        b !{item.name2},
+                        b !{item.name2}, &nbsp;
                     if item.text2
                         | !{item.text2}
                     if item.mail2
