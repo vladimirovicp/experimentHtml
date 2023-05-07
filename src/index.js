@@ -10,3 +10,6 @@ import './js/accordions/accordions2'
 import './js/accordions/accordions3'
 
 import './js/carousel/carousel-1'
+import './js/modal-dialog1'
+
+import './page/modal-dialog1.pug'

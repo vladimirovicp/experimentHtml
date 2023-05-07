@@ -1,0 +1,72 @@
+button{
+  padding: .8rem 1.5rem;
+  background-color: rgb(41,122,128);
+  border: 0;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal{
+  border: 0;
+  border-radius: 4px;
+  text-align: center;
+
+  display: block;
+  transform: scale(.2);
+  opacity: 0;
+  transition: all .4s linear;
+  visibility: hidden;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  margin: auto;
+}
+
+.modal[open]{
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+
+  //animation: zoom 1s linear forwards;
+}
+
+.modal__inner{
+  padding: 1em 2em;
+}
+
+.modal::backdrop{
+  background-color: #252525;
+  opacity: 0.8;
+}
+
+.modal[open]::backdrop{
+  animation: fade .4s linear forwards;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(.2);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+
+
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: .8;
+  }
+}

@@ -87,6 +87,11 @@ module.exports = {
             filename: 'carousel.html',
         }),
 
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/modal-dialog1.pug'),
+            filename: 'modal-dialog1.html',
+        }),
+
 
         new FileManagerPlugin({
             events: {
