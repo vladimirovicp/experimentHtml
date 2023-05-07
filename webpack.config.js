@@ -92,6 +92,13 @@ module.exports = {
             filename: 'modal-dialog1.html',
         }),
 
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/youtube-video.pug'),
+            filename: 'youtube-video.html',
+        }),
+
+
+
 
         new FileManagerPlugin({
             events: {
