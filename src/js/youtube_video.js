@@ -36,10 +36,12 @@ const iframeGenerate = (videoId) => {
     return iframe;
 }
 
-videoInit('video-block')
 
+const youtubeVideo = document.querySelector('.youtube_video');
 
-//video-stop
+if (youtubeVideo){
+    videoInit('video-block')
+
 
     const btnStopVideo = document.querySelector('.video-stop')
 
@@ -64,6 +66,15 @@ videoInit('video-block')
         // container.appendChild(iframe)
 
     })
+
+}
+
+//videoInit('video-block')
+
+
+//video-stop
+
+
 
 
 
