@@ -2,6 +2,8 @@
 //https://rutube.ru/api/video/ {ID} /thumbnail/?redirect=1
 //https://rutube.ru/api/video/{id}
 //https://rutube.ru/video/5959ba29f80d377af52d33eb18a7f529/?r=wd
+    //https://rutube.ru/api/feeds/tnt/?format=api
+    //https://rutube.ru/api/video/5959ba29f80d377af52d33eb18a7f529/thumbnail/?redirect=1
 
 doctype html
 html(lang= 'ru')
@@ -15,6 +17,8 @@ html(lang= 'ru')
                     .video-block
                         .video-block__inner
                             button(class="video-block__button" data-video-id="5959ba29f80d377af52d33eb18a7f529")
+
+                            img(src="https://rutube.ru/api/video/5959ba29f80d377af52d33eb18a7f529/thumbnail/?redirect=1")
 
                             //picture
                             //    source(srcset="https://img.youtube.com/vi_webp/cIDcO5o1Vrk/maxresdefault.webp" type="image/webp")

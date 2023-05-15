@@ -66,3 +66,11 @@ async function apiRutube(id) {
 }
 
 videoRutubeInit('video-block')
+
+
+
+//https://rutube.ru/api/video/5959ba29f80d377af52d33eb18a7f529/thumbnail/?redirect=1
+
+
+
+
