@@ -102,6 +102,13 @@ module.exports = {
             filename: 'rutube.html',
         }),
 
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'page/table.pug'),
+            filename: 'table.html',
+        }),
+
+
+
 
 
 

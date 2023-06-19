@@ -1,0 +1,28 @@
+-
+    const title1 = 'Направления подготовки бакалавриата, специалитета';
+    const title2 = 'Вступительные испытания по приоритетности (через косую черту в перечне указан возможный альтернативный предмет - по выборупоступающего)';
+    const title3 = 'Минимальное количество баллов';
+    const title4 = 'Форма обучения, общее число бюджетных мест';
+
+doctype html
+html(lang= 'ru')
+    head
+        meta(charset='utf-8')
+        title= 'table'
+    body
+        .page-table
+            .wrapper
+                table
+                    //caption Направления подготовки бакалавриата и специалитета СГУ
+                    tr
+                        th !{title1}
+                        th !{title2}
+                        th !{title3}
+                        th !{title4}
+                    tr
+                        td(data-cell=title1) 123456
+                        td(data-cell=title2) 999999
+                        td(data-cell=title3) 123456
+                        td(data-cell=title4) 999999
+
+
