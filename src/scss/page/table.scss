@@ -1,6 +1,12 @@
 
 .page-table{
   //color: white;
+
+  img{
+    width: unset;
+    height: unset;
+  }
+
   .wrapper{
     width: min(900px, 100% - 3rem);
     margin-inline: auto;
